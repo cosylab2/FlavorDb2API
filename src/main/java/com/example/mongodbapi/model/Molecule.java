@@ -107,7 +107,7 @@ public class Molecule {
     private String foodDbFlavorProfile;
 
     @Field("super_sweet")
-    private double superSweet;
+    private String superSweet;
 
     @Field("bitter")
     private double bitter;
@@ -403,11 +403,11 @@ public class Molecule {
         this.foodDbFlavorProfile = foodDbFlavorProfile;
     }
 
-    public double getSuperSweet() {
+    public String getSuperSweet() {
         return superSweet;
     }
 
-    public void setSuperSweet(double superSweet) {
+    public void setSuperSweet(String superSweet) {
         this.superSweet = superSweet;
     }
 

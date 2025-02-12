@@ -118,9 +118,25 @@ public class FnProperty {
     @Field("IOFI")
     private String iofiCategorisation;
 
+    // New field for FoodCategory
+    @Field("Food_Category")
+    private String foodCategory;
+
+    // Getters and setters for the new field
+    public String getFoodCategory() {
+        return foodCategory;
+    }
+
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
+    }
+
+    // Getters and Setters for all other fields (no changes here)
+
     public String getDescription() {
         return description;
     }
+
     public String getIofiCategorisation() {
         return iofiCategorisation;
     }
@@ -141,10 +157,10 @@ public class FnProperty {
         this.coeApproval = coeApproval;
     }
 
-    // Getters and Setters for all fields
     public String getTradeAssociationGuidelines() {
         return tradeAssociationGuidelines;
     }
+
     public String getAromaThresholdValues() {
         return aromaThresholdValues;
     }
@@ -156,6 +172,7 @@ public class FnProperty {
     public void setTradeAssociationGuidelines(String tradeAssociationGuidelines) {
         this.tradeAssociationGuidelines = tradeAssociationGuidelines;
     }
+
     public String getId() {
         return id;
     }

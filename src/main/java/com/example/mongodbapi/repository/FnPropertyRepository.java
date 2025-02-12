@@ -1,12 +1,13 @@
 package com.example.mongodbapi.repository;
 
-import com.example.mongodbapi.model.FnProperty;
+import java.util.List;
+import java.util.regex.Pattern;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.regex.Pattern;
+import com.example.mongodbapi.model.FnProperty;
 
 @Repository
 public interface FnPropertyRepository extends MongoRepository<FnProperty, String> {
@@ -72,6 +73,7 @@ public interface FnPropertyRepository extends MongoRepository<FnProperty, String
     List<FnProperty> findByAromaThresholdValues(String aromaThresholdValues);
     List<FnProperty> findByDescriptionContainingIgnoreCase(String description);
     List<FnProperty> findByNaturalOccurrence(String naturalOccurrence);
+    List<FnProperty> findByFoodCategory(String foodCategory);
     List<FnProperty> findByIofiCategorisationContainingIgnoreCase(String iofiCategorisation);
     List<FnProperty> findByCoeApprovalContainingIgnoreCase(String coeApproval);
 }

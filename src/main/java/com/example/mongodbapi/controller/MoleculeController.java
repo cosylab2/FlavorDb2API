@@ -1,12 +1,16 @@
 package com.example.mongodbapi.controller;
 
-import com.example.mongodbapi.model.Molecule;
-import com.example.mongodbapi.service.MoleculeService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.example.mongodbapi.model.Molecule;
+import com.example.mongodbapi.service.MoleculeService;
 
 @RestController
 @RequestMapping("/api/molecules_data")
@@ -17,8 +21,9 @@ public class MoleculeController {
 
     // API endpoint: /api/molecules_data/by-commonName?common_name=SomeName
     @GetMapping("/by-commonName")
-    public List<Molecule> getMolecules(@RequestParam("common_name") String common_name) {
-        return moleculeService.getMoleculesByCommonName(common_name);
+    public ResponseEntity<List<Molecule>> getMolecules(@RequestParam("common_name") String common_name) { 
+        List<Molecule> molecules = moleculeService.getMoleculesByCommonName(common_name);
+        return ResponseEntity.ok(molecules);
     }
 
     // API endpoint: /api/molecules_data/by-functionalGroups?functional_groups=SomeGroup
