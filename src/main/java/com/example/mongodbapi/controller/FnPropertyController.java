@@ -1,11 +1,15 @@
 package com.example.mongodbapi.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.example.mongodbapi.model.FnProperty;
 import com.example.mongodbapi.service.FnPropertyService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/properties")
@@ -55,10 +59,10 @@ public class FnPropertyController {
         return fnPropertyService.getPropertiesBySynthesis(values);
     }
 
-    @GetMapping("/food-category")
-    public List<FnProperty> getPropertiesByFoodCategory(@RequestParam("values") String values) {
-        return fnPropertyService.getPropertiesByFoodCategory(values);
-    }
+    // @GetMapping("/food-category")
+    // public List<FnProperty> getPropertiesByFoodCategory(@RequestParam("values") String values) {
+    //     return fnPropertyService.getPropertiesByFoodCategory(values);
+    // }
     @GetMapping("/by-tradeAssociationGuidelines")
     public List<FnProperty> getPropertiesByTradeAssociationGuidelines(@RequestParam("guideline") String tradeAssociationGuidelines) {
         return fnPropertyService.getPropertiesByTradeAssociationGuidelines(tradeAssociationGuidelines);

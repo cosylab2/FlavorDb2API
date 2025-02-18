@@ -118,18 +118,18 @@ public class FnProperty {
     @Field("IOFI")
     private String iofiCategorisation;
 
-    // New field for FoodCategory
-    @Field("Food_Category")
-    private String foodCategory;
+    // // New field for FoodCategory
+    // @Field("Food_Category")
+    // private String foodCategory;
 
-    // Getters and setters for the new field
-    public String getFoodCategory() {
-        return foodCategory;
-    }
+    // // Getters and setters for the new field
+    // public String getFoodCategory() {
+    //     return foodCategory;
+    // }
 
-    public void setFoodCategory(String foodCategory) {
-        this.foodCategory = foodCategory;
-    }
+    // public void setFoodCategory(String foodCategory) {
+    //     this.foodCategory = foodCategory;
+    // }
 
     // Getters and Setters for all other fields (no changes here)
 

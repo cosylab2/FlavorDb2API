@@ -68,12 +68,12 @@ public interface FnPropertyRepository extends MongoRepository<FnProperty, String
             "    { 'Food_Category_Usual_Max': { $regex: ?1 } } " +  // Regex for orPatterns
             "  ]} " +
             "] }")
-    List<FnProperty> findByFoodCategory(List<String> andRegexStrings, List<String> orRegexStrings);
+//     List<FnProperty> findByFoodCategory(List<String> andRegexStrings, List<String> orRegexStrings);
     List<FnProperty> findByTradeAssociationGuidelines(String tradeAssociationGuidelines);
     List<FnProperty> findByAromaThresholdValues(String aromaThresholdValues);
     List<FnProperty> findByDescriptionContainingIgnoreCase(String description);
     List<FnProperty> findByNaturalOccurrence(String naturalOccurrence);
-    List<FnProperty> findByFoodCategory(String foodCategory);
+//     List<FnProperty> findByFoodCategory(String foodCategory);
     List<FnProperty> findByIofiCategorisationContainingIgnoreCase(String iofiCategorisation);
     List<FnProperty> findByCoeApprovalContainingIgnoreCase(String coeApproval);
 }

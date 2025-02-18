@@ -206,16 +206,16 @@ public class FnPropertyService {
         return properties;
     }
 
-    public List<FnProperty> getPropertiesByFoodCategory(String values) {
-    // Log the input for debugging
-    System.out.println("Querying for Food Category: '" + values + "'");
+    // public List<FnProperty> getPropertiesByFoodCategory(String values) {
+    // // Log the input for debugging
+    // System.out.println("Querying for Food Category: '" + values + "'");
 
-    // Trim and query the repository
-    List<FnProperty> properties = fnPropertyRepository.findByFoodCategory(values.trim());
-    if (properties.isEmpty()) {
-        throw new ResourceNotFoundException("fn_properties_data", "FoodCategory", values);
-    }
-    return properties;
+    // // Trim and query the repository
+    // List<FnProperty> properties = fnPropertyRepository.findByFoodCategory(values.trim());
+    // if (properties.isEmpty()) {
+    //     throw new ResourceNotFoundException("fn_properties_data", "FoodCategory", values);
+    // }
+    // return properties;
 }
 
-}
+
