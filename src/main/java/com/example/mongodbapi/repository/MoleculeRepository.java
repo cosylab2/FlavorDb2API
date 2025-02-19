@@ -11,11 +11,14 @@ import java.util.List;
 public interface MoleculeRepository extends MongoRepository<Molecule, String> {
 
     // Query to find all molecules by their common name
+    @Query("{ 'common_name': { $regex: ?0, $options: 'i' } }")
     List<Molecule> findByCommonName(String common_name);
 
     // Query to find all molecules by functional groups
     List<Molecule> findByFunctionalGroups(String functional_groups);  // Correct field name
+    @Query("{ 'flavor_profile': { $regex: ?0, $options: 'i' } }")
     List<Molecule> findByFlavorProfile(String flavorProfile);
+    @Query("{ 'fema_flavor_profile': { $regex: ?0, $options: 'i' } }")
     List<Molecule> findByFemaFlavorProfile(String femaFlavorProfile);
     @Query("{ 'pubchem_id': ?0 }")
     List<Molecule> findByPubchemId(int pubchem_id);
@@ -28,6 +31,14 @@ public interface MoleculeRepository extends MongoRepository<Molecule, String> {
     @Query("{ 'molecular_weight' : { $gte: ?0 } }")
     List<Molecule> findByMolecularWeightGreaterThanEqual(double molecularWeight);
 
+    @Query("{ 'natural': ?0 }")
+    List<Molecule> findByNatural(Integer natural);
+
+    @Query("{ 'synthetic': ?0 }")
+    List<Molecule> findBySynthetic(Integer synthetic);
+
+    @Query("{ 'unknown_natural': ?0 }")
+    List<Molecule> findByUnknownNatural(Integer unknownNatural);
 
     @Query("{ 'molecular_weight' : { $gte: ?0, $lte: ?1 } }")
     List<Molecule> findByExactMassBetween(double from, double to);

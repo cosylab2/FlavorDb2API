@@ -11,7 +11,7 @@ public class Molecule {
     private String id;
 
     @Field("pubchem_id")
-    private int pubchemId;
+    private Integer pubchemId;
 
     @Field("iupac_name")
     private String iupacName;
@@ -26,22 +26,22 @@ public class Molecule {
     private double molecularWeight;
 
     @Field("hbd_count")
-    private int hbdCount;
+    private Integer hbdCount;
 
     @Field("hba_count")
-    private int hbaCount;
+    private Integer hbaCount;
 
     @Field("num_rotatablebonds")
-    private int numRotatableBonds;
+    private Integer numRotatableBonds;
 
     @Field("complexity")
     private double complexity;
 
     @Field("topological_polor_surfacearea")
-    private double topologicalPolarSurfaceArea;
+    private Double topologicalPolarSurfaceArea;
 
     @Field("monoisotopic_mass")
-    private double monoisotopicMass;
+    private Double monoisotopicMass;
 
     @Field("exact_mass")
     private double exactMass;
@@ -50,34 +50,34 @@ public class Molecule {
     private double xlogp;
 
     @Field("charge")
-    private int charge;
+    private Integer charge;
 
     @Field("heavy_atom_count")
-    private int heavyAtomCount;
+    private Integer heavyAtomCount;
 
     @Field("atom_stereo_count")
-    private int atomStereoCount;
+    private Integer atomStereoCount;
 
     @Field("defined_atom_stereocenter_count")
-    private int definedAtomStereoCenterCount;
+    private Integer definedAtomStereoCenterCount;
 
     @Field("undefined_atom_stereocenter_count")
-    private int undefinedAtomStereoCenterCount;
+    private Integer undefinedAtomStereoCenterCount;
 
     @Field("bond_stereo_count")
-    private int bondStereoCount;
+    private Integer bondStereoCount;
 
     @Field("defined_bond_stereocenter_count")
-    private int definedBondStereoCenterCount;
+    private Integer definedBondStereoCenterCount;
 
     @Field("undefined_bond_stereocenter_count")
-    private int undefinedBondStereoCenterCount;
+    private Integer undefinedBondStereoCenterCount;
 
     @Field("isotope_atom_count")
-    private int isotopeAtomCount;
+    private Integer isotopeAtomCount;
 
     @Field("covalently_bonded_unit_count")
-    private int covalentlyBondedUnitCount;
+    private Integer covalentlyBondedUnitCount;
 
     @Field("cas_id")
     private String casId;
@@ -122,19 +122,19 @@ public class Molecule {
     private String foodDbId;
 
     @Field("flavornet_id")
-    private int flavorNetId;
+    private Integer flavorNetId;
 
     @Field("fenoroli_and_os")
-    private int fenoroliAndOs;
+    private Integer fenoroliAndOs;
 
     @Field("natural")
-    private int natural;
+    private Integer natural;
 
     @Field("unknown_natural")
-    private int unknownNatural;
+    private Integer unknownNatural;
 
     @Field("synthetic")
-    private int synthetic;
+    private Integer synthetic;
 
     @Field("flavor_profile")
     private String flavorProfile;
@@ -147,11 +147,11 @@ public class Molecule {
         this.id = id;
     }
 
-    public int getPubchemId() {
+    public Integer getPubchemId() {
         return pubchemId;
     }
 
-    public void setPubchemId(int pubchemId) {
+    public void setPubchemId(Integer pubchemId) {
         this.pubchemId = pubchemId;
     }
 
@@ -187,27 +187,27 @@ public class Molecule {
         this.molecularWeight = molecularWeight;
     }
 
-    public int getHbdCount() {
+    public Integer getHbdCount() {
         return hbdCount;
     }
 
-    public void setHbdCount(int hbdCount) {
+    public void setHbdCount(Integer hbdCount) {
         this.hbdCount = hbdCount;
     }
 
-    public int getHbaCount() {
+    public Integer getHbaCount() {
         return hbaCount;
     }
 
-    public void setHbaCount(int hbaCount) {
+    public void setHbaCount(Integer hbaCount) {
         this.hbaCount = hbaCount;
     }
 
-    public int getNumRotatableBonds() {
+    public Integer getNumRotatableBonds() {
         return numRotatableBonds;
     }
 
-    public void setNumRotatableBonds(int numRotatableBonds) {
+    public void setNumRotatableBonds(Integer numRotatableBonds) {
         this.numRotatableBonds = numRotatableBonds;
     }
 
@@ -219,19 +219,19 @@ public class Molecule {
         this.complexity = complexity;
     }
 
-    public double getTopologicalPolarSurfaceArea() {
+    public Double getTopologicalPolarSurfaceArea() {
         return topologicalPolarSurfaceArea;
     }
 
-    public void setTopologicalPolarSurfaceArea(double topologicalPolarSurfaceArea) {
+    public void setTopologicalPolarSurfaceArea(Double topologicalPolarSurfaceArea) {
         this.topologicalPolarSurfaceArea = topologicalPolarSurfaceArea;
     }
 
-    public double getMonoisotopicMass() {
+    public Double getMonoisotopicMass() {
         return monoisotopicMass;
     }
 
-    public void setMonoisotopicMass(double monoisotopicMass) {
+    public void setMonoisotopicMass(Double monoisotopicMass) {
         this.monoisotopicMass = monoisotopicMass;
     }
 
@@ -251,83 +251,83 @@ public class Molecule {
         this.xlogp = xlogp;
     }
 
-    public int getCharge() {
+    public Integer getCharge() {
         return charge;
     }
 
-    public void setCharge(int charge) {
+    public void setCharge(Integer charge) {
         this.charge = charge;
     }
 
-    public int getHeavyAtomCount() {
+    public Integer getHeavyAtomCount() {
         return heavyAtomCount;
     }
 
-    public void setHeavyAtomCount(int heavyAtomCount) {
+    public void setHeavyAtomCount(Integer heavyAtomCount) {
         this.heavyAtomCount = heavyAtomCount;
     }
 
-    public int getAtomStereoCount() {
+    public Integer getAtomStereoCount() {
         return atomStereoCount;
     }
 
-    public void setAtomStereoCount(int atomStereoCount) {
+    public void setAtomStereoCount(Integer atomStereoCount) {
         this.atomStereoCount = atomStereoCount;
     }
 
-    public int getDefinedAtomStereoCenterCount() {
+    public Integer getDefinedAtomStereoCenterCount() {
         return definedAtomStereoCenterCount;
     }
 
-    public void setDefinedAtomStereoCenterCount(int definedAtomStereoCenterCount) {
+    public void setDefinedAtomStereoCenterCount(Integer definedAtomStereoCenterCount) {
         this.definedAtomStereoCenterCount = definedAtomStereoCenterCount;
     }
 
-    public int getUndefinedAtomStereoCenterCount() {
+    public Integer getUndefinedAtomStereoCenterCount() {
         return undefinedAtomStereoCenterCount;
     }
 
-    public void setUndefinedAtomStereoCenterCount(int undefinedAtomStereoCenterCount) {
+    public void setUndefinedAtomStereoCenterCount(Integer undefinedAtomStereoCenterCount) {
         this.undefinedAtomStereoCenterCount = undefinedAtomStereoCenterCount;
     }
 
-    public int getBondStereoCount() {
+    public Integer getBondStereoCount() {
         return bondStereoCount;
     }
 
-    public void setBondStereoCount(int bondStereoCount) {
+    public void setBondStereoCount(Integer bondStereoCount) {
         this.bondStereoCount = bondStereoCount;
     }
 
-    public int getDefinedBondStereoCenterCount() {
+    public Integer getDefinedBondStereoCenterCount() {
         return definedBondStereoCenterCount;
     }
 
-    public void setDefinedBondStereoCenterCount(int definedBondStereoCenterCount) {
+    public void setDefinedBondStereoCenterCount(Integer definedBondStereoCenterCount) {
         this.definedBondStereoCenterCount = definedBondStereoCenterCount;
     }
 
-    public int getUndefinedBondStereoCenterCount() {
+    public Integer getUndefinedBondStereoCenterCount() {
         return undefinedBondStereoCenterCount;
     }
 
-    public void setUndefinedBondStereoCenterCount(int undefinedBondStereoCenterCount) {
+    public void setUndefinedBondStereoCenterCount(Integer undefinedBondStereoCenterCount) {
         this.undefinedBondStereoCenterCount = undefinedBondStereoCenterCount;
     }
 
-    public int getIsotopeAtomCount() {
+    public Integer getIsotopeAtomCount() {
         return isotopeAtomCount;
     }
 
-    public void setIsotopeAtomCount(int isotopeAtomCount) {
+    public void setIsotopeAtomCount(Integer isotopeAtomCount) {
         this.isotopeAtomCount = isotopeAtomCount;
     }
 
-    public int getCovalentlyBondedUnitCount() {
+    public Integer getCovalentlyBondedUnitCount() {
         return covalentlyBondedUnitCount;
     }
 
-    public void setCovalentlyBondedUnitCount(int covalentlyBondedUnitCount) {
+    public void setCovalentlyBondedUnitCount(Integer covalentlyBondedUnitCount) {
         this.covalentlyBondedUnitCount = covalentlyBondedUnitCount;
     }
 
@@ -443,43 +443,43 @@ public class Molecule {
         this.foodDbId = foodDbId;
     }
 
-    public int getFlavorNetId() {
+    public Integer getFlavorNetId() {
         return flavorNetId;
     }
 
-    public void setFlavorNetId(int flavorNetId) {
+    public void setFlavorNetId(Integer flavorNetId) {
         this.flavorNetId = flavorNetId;
     }
 
-    public int getFenoroliAndOs() {
+    public Integer getFenoroliAndOs() {
         return fenoroliAndOs;
     }
 
-    public void setFenoroliAndOs(int fenoroliAndOs) {
+    public void setFenoroliAndOs(Integer fenoroliAndOs) {
         this.fenoroliAndOs = fenoroliAndOs;
     }
 
-    public int getNatural() {
+    public Integer getNatural() {
         return natural;
     }
 
-    public void setNatural(int natural) {
+    public void setNatural(Integer natural) {
         this.natural = natural;
     }
 
-    public int getUnknownNatural() {
+    public Integer getUnknownNatural() {
         return unknownNatural;
     }
 
-    public void setUnknownNatural(int unknownNatural) {
+    public void setUnknownNatural(Integer unknownNatural) {
         this.unknownNatural = unknownNatural;
     }
 
-    public int getSynthetic() {
+    public Integer getSynthetic() {
         return synthetic;
     }
 
-    public void setSynthetic(int synthetic) {
+    public void setSynthetic(Integer synthetic) {
         this.synthetic = synthetic;
     }
 

@@ -50,24 +50,24 @@ public interface FnPropertyRepository extends MongoRepository<FnProperty, String
     List<FnProperty> findByField(List<Pattern> andPatterns, List<Pattern> orPatterns, String fieldName);
 
 
-    @Query("{ $or: [ " +
-            "  { $and: [ " +
-            "    { $expr: { $eq: [ { $size: { $ifNull: [?0, []] } }, 0 ] } }, " +  // If andPatterns is empty, OR logic is applied
-            "    { $expr: { $gt: [ { $size: { $ifNull: [?1, []] } }, 0 ] } }, " +  // If orPatterns has values
-            "    { 'Food_Category_Usual_Max': { $regex: ?1 } } " +  // Regex for orPatterns
-            "  ]}, " +
-            "  { $and: [ " +
-            "    { $expr: { $gt: [ { $size: { $ifNull: [?0, []] } }, 0 ] } }, " +  // If andPatterns has values
-            "    { $expr: { $eq: [ { $size: { $ifNull: [?1, []] } }, 0 ] } }, " +  // If orPatterns is empty
-            "    { 'Food_Category_Usual_Max': { $regex: ?0 } } " +  // Regex for andPatterns
-            "  ]}, " +
-            "  { $and: [ " +
-            "    { $expr: { $gt: [ { $size: { $ifNull: [?0, []] } }, 0 ] } }, " +  // If both andPatterns and orPatterns have values
-            "    { $expr: { $gt: [ { $size: { $ifNull: [?1, []] } }, 0 ] } }, " +
-            "    { 'Food_Category_Usual_Max': { $regex: ?0 } }, " +  // Regex for andPatterns
-            "    { 'Food_Category_Usual_Max': { $regex: ?1 } } " +  // Regex for orPatterns
-            "  ]} " +
-            "] }")
+    // @Query("{ $or: [ " +
+    //         "  { $and: [ " +
+    //         "    { $expr: { $eq: [ { $size: { $ifNull: [?0, []] } }, 0 ] } }, " +  // If andPatterns is empty, OR logic is applied
+    //         "    { $expr: { $gt: [ { $size: { $ifNull: [?1, []] } }, 0 ] } }, " +  // If orPatterns has values
+    //         "    { 'Food_Category_Usual_Max': { $regex: ?1 } } " +  // Regex for orPatterns
+    //         "  ]}, " +
+    //         "  { $and: [ " +
+    //         "    { $expr: { $gt: [ { $size: { $ifNull: [?0, []] } }, 0 ] } }, " +  // If andPatterns has values
+    //         "    { $expr: { $eq: [ { $size: { $ifNull: [?1, []] } }, 0 ] } }, " +  // If orPatterns is empty
+    //         "    { 'Food_Category_Usual_Max': { $regex: ?0 } } " +  // Regex for andPatterns
+    //         "  ]}, " +
+    //         "  { $and: [ " +
+    //         "    { $expr: { $gt: [ { $size: { $ifNull: [?0, []] } }, 0 ] } }, " +  // If both andPatterns and orPatterns have values
+    //         "    { $expr: { $gt: [ { $size: { $ifNull: [?1, []] } }, 0 ] } }, " +
+    //         "    { 'Food_Category_Usual_Max': { $regex: ?0 } }, " +  // Regex for andPatterns
+    //         "    { 'Food_Category_Usual_Max': { $regex: ?1 } } " +  // Regex for orPatterns
+    //         "  ]} " +
+    //         "] }")
 //     List<FnProperty> findByFoodCategory(List<String> andRegexStrings, List<String> orRegexStrings);
     List<FnProperty> findByTradeAssociationGuidelines(String tradeAssociationGuidelines);
     List<FnProperty> findByAromaThresholdValues(String aromaThresholdValues);

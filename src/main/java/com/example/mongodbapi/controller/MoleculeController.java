@@ -1,16 +1,12 @@
 package com.example.mongodbapi.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.mongodbapi.model.Molecule;
 import com.example.mongodbapi.service.MoleculeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/molecules_data")
@@ -21,7 +17,7 @@ public class MoleculeController {
 
     // API endpoint: /api/molecules_data/by-commonName?common_name=SomeName
     @GetMapping("/by-commonName")
-    public ResponseEntity<List<Molecule>> getMolecules(@RequestParam("common_name") String common_name) {
+    public ResponseEntity<List<Molecule>> getMolecules(@RequestParam("common_name") String common_name) { 
         List<Molecule> molecules = moleculeService.getMoleculesByCommonName(common_name);
         return ResponseEntity.ok(molecules);
     }
@@ -41,39 +37,41 @@ public class MoleculeController {
         return moleculeService.getMoleculesByFemaFlavorProfile(femaFlavorProfile);
     }
     @GetMapping("/by-pubchemId")
-    public List<Molecule> getMoleculesByPubchemId(@RequestParam("pubchem_id") int pubchem_id) {
-        return moleculeService.getMoleculesByPubchemId(pubchem_id);
+    public ResponseEntity<List<Molecule>> getMoleculeByPubchemId(@RequestParam(value = "pubchem_id",required = false) Integer pubchem_id) {
+        List<Molecule> molecules = moleculeService.getMoleculesByPubchemId(pubchem_id);
+        return ResponseEntity.ok(molecules);
     }
     @GetMapping("/by-monoisotopicMass")
-    public List<Molecule> getMoleculesByMonoisotopicMass(@RequestParam("monoisotopic_mass") double monoisotopicMass) {
-        return moleculeService.getMoleculesByMonoisotopicMass(monoisotopicMass);
+    public ResponseEntity<List<Molecule>> getMoleculesByMonoisotopicMass(@RequestParam(required = false) Double monoisotopicMass) {
+        List<Molecule> molecules = moleculeService.getMoleculesByMonoisotopicMass(monoisotopicMass);
+        return ResponseEntity.ok(molecules);
     }
     @GetMapping("/by-topologicalPolarSurfaceArea")
     public List<Molecule> getMoleculesByTopologicalPolarSurfaceArea(
-            @RequestParam("topological_polar_surface_area") double topologicalPolarSurfaceArea) {
+            @RequestParam(required = false) Double topologicalPolarSurfaceArea) {
         return moleculeService.getMoleculesByTopologicalPolarSurfaceArea(topologicalPolarSurfaceArea);
     }
     @GetMapping("/by-heavyAtomCount")
-    public List<Molecule> getMoleculesByHeavyAtomCount(@RequestParam("heavy_atom_count") int heavyAtomCount) {
+    public List<Molecule> getMoleculesByHeavyAtomCount(@RequestParam(value = "heavy_atom_count", required = false) Integer heavyAtomCount) {
         return moleculeService.getMoleculesByHeavyAtomCount(heavyAtomCount);
     }
     @GetMapping("/filter-by-weight-from")
-    public List<Molecule> getMoleculesByWeightFrom(@RequestParam double from) {
+    public List<Molecule> getMoleculesByWeightFrom(@RequestParam(required = false) Double from) {
         return moleculeService.findMoleculesByWeightFrom(from);
     }
 
     @GetMapping("/filter-by-weight-range")
-    public List<Molecule> getMoleculesByWeightRange(@RequestParam double from, @RequestParam double to) {
+    public List<Molecule> getMoleculesByWeightRange(@RequestParam(required = false) Double from, @RequestParam(required = false) Double to) {
         return moleculeService.findMoleculesByWeightRange(from, to);
     }
 
     @GetMapping("/filter-by-hbd-count")
-    public List<Molecule> filterByHbdCount(@RequestParam int hbdCount) {
+    public List<Molecule> filterByHbdCount(@RequestParam(required = false) Integer hbdCount) {
         return moleculeService.findByHbdCount(hbdCount);
     }
 
     @GetMapping("/filter-by-hba-count")
-    public List<Molecule> filterByHbaCount(@RequestParam int hbaCount) {
+    public List<Molecule> filterByHbaCount(@RequestParam Integer hbaCount) {
         return moleculeService.findByHbaCount(hbaCount);
     }
 

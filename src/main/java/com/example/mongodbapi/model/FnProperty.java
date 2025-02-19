@@ -118,6 +118,16 @@ public class FnProperty {
     @Field("IOFI")
     private String iofiCategorisation;
 
+    @Field("Synthesis")  // Match MongoDB field name exactly
+    private String synthesis;
+
+    public String getSynthesis() {
+        return synthesis;
+    }
+
+    public void setSynthesis(String synthesis) {
+        this.synthesis = synthesis;
+    }
     // // New field for FoodCategory
     // @Field("Food_Category")
     // private String foodCategory;
@@ -132,7 +142,6 @@ public class FnProperty {
     // }
 
     // Getters and Setters for all other fields (no changes here)
-
     public String getDescription() {
         return description;
     }

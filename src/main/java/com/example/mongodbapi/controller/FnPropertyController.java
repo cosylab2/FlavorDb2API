@@ -1,14 +1,10 @@
 package com.example.mongodbapi.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 import com.example.mongodbapi.model.FnProperty;
 import com.example.mongodbapi.service.FnPropertyService;
@@ -20,112 +16,73 @@ public class FnPropertyController {
     @Autowired
     private FnPropertyService fnPropertyService;
 
-    // 1️⃣ GET property by CoE_No
+    // API endpoint to filter properties by CoE_No
     @GetMapping("/by-coe")
-    public ResponseEntity<?> getPropertiesByCoeNo(@RequestParam("coe_no") String coeNo) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByCoeNo(coeNo);
-        return buildResponse(properties, "CoE_No", coeNo);
+    public List<FnProperty> getPropertiesByCoeNo(@RequestParam("coe_no") String coeNo) {
+        return fnPropertyService.getPropertiesByCoeNo(coeNo);
     }
 
-    // 2️⃣ GET property by FemaNo
+    // API endpoint to filter properties by FemaNo
     @GetMapping("/by-fema")
-    public ResponseEntity<?> getPropertiesByFemaNo(@RequestParam("fema_no") Double femaNo) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByFemaNo(femaNo);
-        return buildResponse(properties, "FemaNo", femaNo);
+    public List<FnProperty> getPropertiesByFemaNo(@RequestParam("fema_no") Double femaNo) {
+        return fnPropertyService.getPropertiesByFemaNo(femaNo);
     }
-
-    // 3️⃣ GET property by FL_No
     @GetMapping("/by-flNo")
-    public ResponseEntity<?> getFnPropertiesByFlNo(@RequestParam("fl_no") String flNo) {
-        List<FnProperty> properties = fnPropertyService.getFnPropertiesByFlNo(flNo);
-        return buildResponse(properties, "FL_No", flNo);
+    public List<FnProperty> getFnPropertiesByFlNo(@RequestParam("fl_no") String fl_no) {
+        return fnPropertyService.getFnPropertiesByFlNo(fl_no);
     }
-
-    // 4️⃣ GET property by NAS_No
+    // API endpoint to filter properties by NAS_No
     @GetMapping("/by-nas")
-    public ResponseEntity<?> getPropertiesByNasNo(@RequestParam("nas_no") String nasNo) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByNasNo(nasNo);
-        return buildResponse(properties, "NAS_No", nasNo);
+    public List<FnProperty> getPropertiesByNasNo(@RequestParam("nas_no") String nasNo) {
+        return fnPropertyService.getPropertiesByNasNo(nasNo);
     }
-
-    // 5️⃣ GET property by EINECS_No
+    // API endpoint to filter properties by EINECS_No
     @GetMapping("/by-einecs")
-    public ResponseEntity<?> getPropertiesByEinecsNo(@RequestParam("einecs_no") String einecsNo) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByEinecsNo(einecsNo);
-        return buildResponse(properties, "EINECS_No", einecsNo);
+    public List<FnProperty> getPropertiesByEinecsNo(@RequestParam("einecs_no") String einecsNo) {
+        return fnPropertyService.getPropertiesByEinecsNo(einecsNo);
     }
-
-    // 6️⃣ GET property by JECFA_No
+    // API endpoint to filter properties by JECFA_No
     @GetMapping("/by-jecfa")
-    public ResponseEntity<?> getPropertiesByJecfaNo(@RequestParam("jecfa_no") String jecfaNo) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByJecfaNo(jecfaNo);
-        return buildResponse(properties, "JECFA_No", jecfaNo);
+    public List<FnProperty> getPropertiesByJecfaNo(@RequestParam("jecfa_no") String jecfaNo) {
+        return fnPropertyService.getPropertiesByJecfaNo(jecfaNo);
     }
 
-    // 7️⃣ GET property by Taste Threshold
     @GetMapping("/taste-threshold")
-    public ResponseEntity<?> getPropertiesByTasteThreshold(@RequestParam("values") String values) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByTasteThreshold(values);
-        return buildResponse(properties, "Taste Threshold", values);
+    public List<FnProperty> getPropertiesByTasteThreshold(@RequestParam("values") String values) {
+        return fnPropertyService.getPropertiesByTasteThreshold(values);
     }
 
-    // 8️⃣ GET property by Synthesis
     @GetMapping("/synthesis")
-    public ResponseEntity<?> getPropertiesBySynthesis(@RequestParam("values") String values) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesBySynthesis(values);
-        return buildResponse(properties, "Synthesis", values);
+    public List<FnProperty> getPropertiesBySynthesis(@RequestParam("values") String values) {
+        return fnPropertyService.getPropertiesBySynthesis(values);
     }
 
-    // 9️⃣ GET property by Trade Association Guidelines
+    // @GetMapping("/food-category")
+    // public List<FnProperty> getPropertiesByFoodCategory(@RequestParam("values") String values) {
+    //     return fnPropertyService.getPropertiesByFoodCategory(values);
+    // }
     @GetMapping("/by-tradeAssociationGuidelines")
-    public ResponseEntity<?> getPropertiesByTradeAssociationGuidelines(@RequestParam("guideline") String guideline) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByTradeAssociationGuidelines(guideline);
-        return buildResponse(properties, "Trade Association Guidelines", guideline);
+    public List<FnProperty> getPropertiesByTradeAssociationGuidelines(@RequestParam("guideline") String tradeAssociationGuidelines) {
+        return fnPropertyService.getPropertiesByTradeAssociationGuidelines(tradeAssociationGuidelines);
     }
-
-    // 🔟 GET property by Natural Occurrence
     @GetMapping("/by-naturalOccurrence")
-    public ResponseEntity<?> getPropertiesByNaturalOccurrence(@RequestParam("occurrence") String occurrence) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByNaturalOccurrence(occurrence);
-        return buildResponse(properties, "Natural Occurrence", occurrence);
+    public List<FnProperty> getPropertiesByNaturalOccurrence(@RequestParam("occurrence") String naturalOccurrence) {
+        return fnPropertyService.getPropertiesByNaturalOccurrence(naturalOccurrence);
     }
-
-    // 1️⃣1️⃣ GET property by Aroma Threshold Values
     @GetMapping("/by-aromaThresholdValues")
-    public ResponseEntity<?> getPropertiesByAromaThresholdValues(@RequestParam("threshold") String threshold) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByAromaThresholdValues(threshold);
-        return buildResponse(properties, "Aroma Threshold Values", threshold);
+    public List<FnProperty> getPropertiesByAromaThresholdValues(@RequestParam("threshold") String aromaThresholdValues) {
+        return fnPropertyService.getPropertiesByAromaThresholdValues(aromaThresholdValues);
     }
-
-    // 1️⃣2️⃣ GET property by Description
     @GetMapping("/by-description")
-    public ResponseEntity<?> getPropertiesByDescription(@RequestParam("desc") String description) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByDescription(description);
-        return buildResponse(properties, "Description", description);
+    public List<FnProperty> getPropertiesByDescription(@RequestParam("desc") String description) {
+        return fnPropertyService.getPropertiesByDescription(description);
     }
-
-    // 1️⃣3️⃣ GET property by IOFI Categorisation
     @GetMapping("/by-iofi-categorisation")
-    public ResponseEntity<?> getPropertiesByIofiCategorisation(@RequestParam("category") String category) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByIofiCategorisation(category);
-        return buildResponse(properties, "IOFI Categorisation", category);
+    public List<FnProperty> getPropertiesByIofiCategorisation(@RequestParam("category") String iofiCategorisation) {
+        return fnPropertyService.getPropertiesByIofiCategorisation(iofiCategorisation);
     }
-
-    // 1️⃣4️⃣ GET property by CoE Approval
     @GetMapping("/by-coe-approval")
-    public ResponseEntity<?> getPropertiesByCoeApproval(@RequestParam("coe_approval") String coeApproval) {
-        List<FnProperty> properties = fnPropertyService.getPropertiesByCoeApproval(coeApproval);
-        return buildResponse(properties, "CoE Approval", coeApproval);
-    }
-
-    // 1️⃣5️⃣ Utility Method to Handle Not Found Responses
-    private ResponseEntity<?> buildResponse(List<FnProperty> properties, String field, Object value) {
-        if (properties.isEmpty()) {
-            return ResponseEntity.status(404).body(Map.of(
-                "statusCode", 404,
-                "message", field + " not found: " + value
-            ));
-        }
-        return ResponseEntity.ok(properties);
+    public List<FnProperty> getPropertiesByCoeApproval(@RequestParam("coe_approval") String coeApproval) {
+        return fnPropertyService.getPropertiesByCoeApproval(coeApproval);
     }
 }
