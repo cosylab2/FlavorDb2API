@@ -1339,6 +1339,26 @@
 **URL**: `http://localhost:8080/api/properties/by-coe?coe_no=0`  
 **Output**: `[]`
 
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-coe?coe_no=0`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "fn_properties_data not found with CoeNo : 0",
+    "details": "uri=/api/properties/by-coe"
+}
+```
+
+**URL**: `http://localhost:8080/api/properties/by-coe?coe_no=`  
+**Output**:
+```json
+{
+    "statusCode": 400,
+    "message": "CoeNo cannot be null or empty",
+    "details": "uri=/api/properties/by-coe"
+}
+```
 ----------
 
 
@@ -1366,6 +1386,17 @@
 **Error**:  
 **URL**: `http://localhost:8080/api/properties/by-fema?fema_no=0`  
 **Output**: `[]`
+
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-fema?fema_no=0`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "fn_properties_data not found with FemaNo : 0.0",
+    "details": "uri=/api/properties/by-fema"
+}
+```
 
 ----------
 
@@ -1395,8 +1426,18 @@
 **URL**: `http://localhost:8080/api/properties/synthesis?values=ABC`  
 **Output**: `[]`
 
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/synthesis?values=abc`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "Synthesis not found: abc"
+}
+```
 ----------
 
+**Removed this API Endpoint as it was not working properly and no data was matching this field**
 **Endpoint**: `/api/properties/food-category`  
 **HTTP Method**: GET  
 **Inputs**: Query parameter: `values` 
@@ -1414,10 +1455,6 @@
 }
 
 ```
-
-**Error**:  
-**URL**: `http://localhost:8080/api/properties/by-fema?fema_no=0`  
-**Output**: `[]`
 
 ----------
 
@@ -1475,9 +1512,19 @@
 ```
 
 **Error**:  
-**URL**: `http://localhost:8080/api/properties/by-fema?fema_no=0`  
+**URL**: `http://localhost:8080/api/properties/by-einecs?einecs_no=0`  
 **Output**: `[]`
 
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-einecs?einecs_no=0`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "fn_properties_data not found with EinecsNo : 0",
+    "details": "uri=/api/properties/by-einecs"
+}
+```
 ----------
 
 **Endpoint**: `//api/properties/taste-threshold`  
@@ -1534,6 +1581,16 @@
 **Error**:  
 **URL**: `http://localhost:8080/api/properties/taste-threshold?values=meduim`  
 **Output**: `[]`
+
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/taste-threshold?values=medium`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "Taste Threshold not found: medium"
+}
+```
 
 ----------
 
@@ -1593,6 +1650,17 @@
 **URL**: `http://localhost:8080/api/properties/by-flNo?fl_no=0`  
 **Output**: `[]`
 
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-flNo?fl_no=0`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "fn_properties_data not found with FlNo : 0",
+    "details": "uri=/api/properties/by-flNo"
+}
+```
+
 ----------
 
 **Endpoint**: `/api/properties/by-nas`  
@@ -1651,6 +1719,17 @@
 **URL**: `http://localhost:8080/api/properties/by-nas?nas_no=0`  
 **Output**: `[]`
 
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-nas?nas_no=0`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "fn_properties_data not found with NasNo : 0",
+    "details": "uri=/api/properties/by-nas"
+}
+```
+
 ----------
 
 **Endpoint**: `/api/properties/by-jecfa`  
@@ -1708,6 +1787,17 @@
 **Error**:  
 **URL**: `http://localhost:8080/api/properties/by-jecfa?jecfa_no=0`  
 **Output**: `[]`
+
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-jecfa?jecfa_no=8100`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "fn_properties_data not found with JecfaNo : 8100",
+    "details": "uri=/api/properties/by-jecfa"
+}
+```
 
 ----------
 **Endpoint**: `/api/properties/by-tradeAssociationGuidelines`  
@@ -1822,6 +1912,16 @@
 **URL**: `http://localhost:8080/api/properties/by-coe-approval?coe_approval=cancel`  
 **Output**: `[]`
 
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-coe-approval?coe_approval=cancel`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "CoE Approval not found: cancel"
+}
+```
+
 ----------
 **Endpoint**: `/api/properties/by-iofi-categorisation`  
 **HTTP Method**: GET  
@@ -1877,6 +1977,16 @@
 **Error**:  
 **URL**: `http://localhost:8080/api/properties/by-iofi-categorisation?category=0`  
 **Output**: `[]`
+
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-iofi-categorisation?category=0`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "IOFI Categorisation not found: 0"
+}
+```
 
 ----------
 **Endpoint**: `/api/properties/by-naturalOccurrence`  
@@ -1934,23 +2044,84 @@
 **URL**: `http://localhost:8080/api/properties/by-naturalOccurrence?occurrence=0`  
 **Output**: `[]`
 
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-naturalOccurrence?occurrence=0`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "Natural Occurrence not found: 0"
+}
+```
+
+
 ----------
 
 **Endpoint**: `/api/properties/by-aromaThresholdValues`  
 **HTTP Method**: GET  
 **Inputs**: Query parameter: `threshold` 
-**Example**: `/api/properties/by-aromaThresholdValues?threshold=High`
-**Response Time**: 39 ms
+**Example**: `/api/properties/by-aromaThresholdValues?threshold=4 to 42 ppb`
+**Response Time**: 49 ms
 
 **Output**:
 
 ```json
-[]
+[
+    {
+        "id": "6784f1aee07c0c5b545d8864",
+        "name": "ACETAL",
+        "botanicalName": "NaN",
+        "botanicalFamily": "NaN",
+        "synonyms": "Acetaldehyde diethyl acetal; Acetaldehyde ethyl acetal; Acetol; Diethylacetal; Dithane, 1,1-diethoxy-; Ethylidene diethyl ether; Ethylidenediethyl ether; 1,1-Diethoxyethane",
+        "casNo": "105-57-7",
+        "flNo": "6.001",
+        "femaNo": 2002.0,
+        "nasNo": "2002",
+        "coeNo": "35",
+        "coeApproval": "20 ppm",
+        "einecsNo": "203-310-6",
+        "fda": "21 CFR 172.515",
+        "femaGras": null,
+        "jecfaNo": "941",
+        "jecfaStatus": null,
+        "additives": null,
+        "ifraCategory": null,
+        "reachNo": null,
+        "scentRefLibrary": null,
+        "fct": null,
+        "notes": null,
+        "derivatives": "NaN",
+        "derivativeNames": "NaN",
+        "note": "NaN",
+        "foreignNames": "NaN",
+        "essentialOilComposition": "NaN",
+        "genusSpecies": "NaN",
+        "composition": "NaN",
+        "insNo": "NaN",
+        "animalFamily": "NaN",
+        "physicalChemicalCharacteristics": "NaN",
+        "naturalOccurrence": "Present in some liquors (e g , sake, whiskey and cognac); also detected and quantitatively assessed in rums. Found in apple juice, orange juice, orange peel oil, bitter orange juice, strawberry fruit, raw radish, Chinese quince fruit, Chinese quince flesh, udo (Aralia cordata Thunb ) ",
+        "tradeAssociationGuidelines": "11.580 mg",
+        "aromaThresholdValues": "4 to 42 ppb",
+        "description": "Acetal has a refreshing, pleasant, fruity-green odor ",
+        "iofiCategorisation": "Nature Identical"
+    }
+]
 ```
 
 **Error**:  
 **URL**: `http://localhost:8080/api/properties/by-aromaThresholdValues?threshold=1`  
 **Output**: `[]`
+
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-aromaThresholdValues?threshold=4`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "Aroma Threshold Values not found: 4 "
+}
+```
 
 ----------
 
@@ -2009,6 +2180,16 @@
 **Error**:  
 **URL**: `http://localhost:8080/api/properties/by-description?desc=abc`  
 **Output**: `[]`
+
+**Error Fixed**:
+  **URL**: `http://localhost:8080/api/properties/by-description?desc=Abc`  
+**Output**:
+```json
+{
+    "statusCode": 404,
+    "message": "Description not found: Abc"
+}
+```
 
 ----------
 
