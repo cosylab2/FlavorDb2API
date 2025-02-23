@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "molecules_data")
+@Document(collection = "fdb_molecules")
 public class Molecule {
 
     @Id
