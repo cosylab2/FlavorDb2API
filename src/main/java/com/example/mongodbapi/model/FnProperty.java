@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "fn_properties_data")  // MongoDB collection name
+@Document(collection = "fdb_fn_properties")  // MongoDB collection name
 public class FnProperty {
 
     @Id
