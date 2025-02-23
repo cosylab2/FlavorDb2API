@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "more_properties_data")  // Replace with the actual collection name
+@Document(collection = "fdb_more_properties")  // Replace with the actual collection name
 public class MoreProperty {
 
     @Id
